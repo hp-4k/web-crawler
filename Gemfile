@@ -43,4 +43,4 @@ gem 'rspec-rails', '~> 3.0.2'
 gem 'nokogiri', '~> 1.6.3.1'
 gem 'open_uri_redirections'
 gem 'will_paginate', '~> 3.0'
-
+gem 'will_paginate-bootstrap'

@@ -25,7 +25,7 @@
           <% end %>
         </table>
 
-        <%= will_paginate @links %>
+        <%= will_paginate @links, renderer: BootstrapPagination::Rails %>
 
       <% end %>
 

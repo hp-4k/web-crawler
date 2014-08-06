@@ -15,7 +15,7 @@ class StaticPagesController < ApplicationController
           end
         end.uniq.paginate(:page => params[:page])
       end    
-    rescue Errno::ENOENT
+    rescue *[URI::InvalidURIError, Errno::ENOENT]
       flash[:error] = 'Invalid URL'
       render 'home' and return
     end

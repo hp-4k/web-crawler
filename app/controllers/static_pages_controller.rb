@@ -13,7 +13,7 @@ class StaticPagesController < ApplicationController
           else
             params[:url] + '/' + (link['href'] || '')
           end
-        end.uniq
+        end.uniq.paginate(:page => params[:page])
       end    
     rescue Errno::ENOENT
       flash[:error] = 'Invalid URL'

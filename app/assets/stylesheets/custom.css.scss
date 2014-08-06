@@ -1,0 +1,12 @@
+.table {
+  table-layout: fixed;
+  word-wrap: break-word;
+  tr {
+    td {
+      vertical-align: middle !important;
+    }
+    td:last-of-type {
+      width: 100px;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2 text-center">
+
+      <h1>What page do you want to crawl?</h1>
+
+      <% if error? %>
+        <div class="alert alert-danger">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+
+      <%= form_tag(root_path, method: 'get') do %>
+        <p><%= text_field_tag(:url, text_field_text, class: 'form-control') %></p>
+        <p><%= submit_tag('Crawl me!', class: 'btn btn-lg btn-primary') %></p>
+      <% end %>
+
+      <% unless error? %>
+        <h2>I have found the following links:</h2>
+        <table class="table text-left">
+          <% @links.each do |link| %>
+            <tr> 
+              <td><%= link_to link, link %></td>
+              <td><%= link_to 'Crawl me!', root_path(url: link), class: 'btn btn-default' %></td>
+            </tr>
+          <% end %>
+        </table>
+      <% end %>
+
+  </div>
+</div>

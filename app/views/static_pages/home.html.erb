@@ -3,7 +3,7 @@
 
       <h1>What page do you want to crawl?</h1>
 
-      <% if error? %>
+      <% if flash[:error] %>
         <div class="alert alert-danger">
           <p><%= flash[:error] %></p>
         </div>
@@ -14,7 +14,7 @@
         <p><%= submit_tag('Crawl me!', class: 'btn btn-lg btn-primary') %></p>
       <% end %>
 
-      <% unless error? %>
+      <% if links_to_display? %>
         <h2>I have found the following links:</h2>
         <table class="table text-left">
           <% @links.each do |link| %>

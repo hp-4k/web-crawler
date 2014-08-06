@@ -4,8 +4,8 @@ module StaticPagesHelper
     params[:url] || 'http://'
   end
 
-  def error?
-    flash[:error] 
+  def links_to_display?
+    !flash[:error] && @links
   end
 
 end
